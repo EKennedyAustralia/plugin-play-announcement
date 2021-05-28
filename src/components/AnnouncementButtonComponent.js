@@ -16,7 +16,9 @@ class AnnouncementButtonComponent extends React.Component {
   updateCall = () => {
   
     var confSID = this.props.task.attributes.conference.sid;
-    var BASE_URL = this.props.manager.configuration.serviceBaseUrl
+    var BASE_URL = this.props.manager.configuration.serviceBaseUrl;
+    console.log(BASE_URL);
+    console.log(confSID)
 
     //replace URL if your not using functions classic as the serverless domain will not be the same as your flex domain
     axios.get(`https://${BASE_URL}/announcement?Sid=${confSID}`);
